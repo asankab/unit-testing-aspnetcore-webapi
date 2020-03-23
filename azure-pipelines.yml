@@ -21,18 +21,18 @@ steps:
   displayName: Run Tests
   inputs:
     command: test
-    projects: $(unitTestProjectPath)
+    projects: '$(unitTestProjectPath)'
     arguments: '--configuration $(buildConfiguration)'
 
 - script: dotnet build $(solutionDirectory) --configuration $(buildConfiguration)
-  displayName: DotNet Build $(buildConfiguration)
+  displayName: 'DotNet Build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: DotNet Publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)
+  displayName: 'DotNet Publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
   inputs:
     command: publish
     publishWebProjects: false
-    projects: $(sourceCodeProjectPath)
+    projects: '$(sourceCodeProjectPath)'
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/drop'
     zipAfterPublish: true
 
