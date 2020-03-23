@@ -24,7 +24,7 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
 
 - script: dotnet build $(solutionDirectory) --configuration $(buildConfiguration)
-  displayName: dotnet build $(buildConfiguration)
+  displayName: DotNet Build $(buildConfiguration)
 
 #- task: DotNetCoreCLI@2
 #  displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
@@ -34,8 +34,8 @@ steps:
 #    projects: $(sourceCodeProjectPath)
 #    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
 
-#- task: PublishBuildArtifacts@1
-#  displayName: 'publish artifacts'
-#  inputs:
-#    pathToPublish: $(Build.ArtifactStagingDirectory)
-#    artifactName: drop
+- task: PublishBuildArtifacts@1
+  displayName: 'publish artifacts'
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: drop
