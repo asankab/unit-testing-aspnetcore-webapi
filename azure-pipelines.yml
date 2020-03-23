@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solutionDirectory: 'unit-testing-aspnetcore-webapi/netcore-unit-testing/web-api.sln'
+  //solutionDirectory: 'unit-testing-aspnetcore-webapi/netcore-unit-testing/web-api.sln'
   sourceCodeProjectPath: 'web-api/web-api.csproj'
   unitTestProjectPath: 'web-api-tests/web-api-tests.csproj'
   buildPlatform: 'Any CPU'
@@ -23,7 +23,7 @@ steps:
     projects: $(unitTestProjectPath)
     arguments: '--configuration $(buildConfiguration)'
 
-- script: dotnet build [$(solutionDirectory)] --configuration $(buildConfiguration)
+- script: dotnet build $(sourceCodeProjectPath) --configuration $(buildConfiguration)
   displayName: dotnet build $(buildConfiguration)
 
 - task: DotNetCoreCLI@2
