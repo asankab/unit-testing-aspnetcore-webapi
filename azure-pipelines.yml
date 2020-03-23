@@ -27,12 +27,12 @@ steps:
   displayName: DotNet Build $(buildConfiguration)
 
 - task: DotNetCoreCLI@2
-  displayName: 'DotNet Publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+  displayName: DotNet Publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)
   inputs:
     command: publish
     publishWebProjects: false
     projects: $(sourceCodeProjectPath)
-    arguments: '--configuration $(buildConfiguration) --Output $(Build.ArtifactStagingDirectory)/drop'
+    arguments: --configuration $(buildConfiguration) --Output $(Build.ArtifactStagingDirectory)/drop
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
