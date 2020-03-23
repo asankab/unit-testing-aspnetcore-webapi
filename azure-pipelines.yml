@@ -47,4 +47,4 @@ steps:
     publishLocation: Container
 
 - download: current
-  artifact: $(artifactName)
+  artifact: Container $(artifactName)
