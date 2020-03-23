@@ -11,8 +11,8 @@ pool:
 
 variables:
   solutionDirectory: 'netcore-unit-testing/web-api.sln'
-  sourceCodeProjectPath: 'web-api/web-api.csproj'
-  unitTestProjectPath: 'web-api-tests/web-api-tests.csproj'
+  sourceCodeProjectPath: 'netcore-unit-testing/web-api/web-api.csproj'
+  unitTestProjectPath: 'netcore-unit-testing/web-api-tests/web-api-tests.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
