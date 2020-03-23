@@ -45,3 +45,6 @@ steps:
     PathtoPublish: $(Build.ArtifactStagingDirectory)
     artifactName: $(artifactName)
     publishLocation: Container
+
+- download: current
+  artifact: $(artifactName)
