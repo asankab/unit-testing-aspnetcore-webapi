@@ -33,7 +33,7 @@ steps:
     command: publish
     publishWebProjects: false
     projects: '$(sourceCodeProjectPath)'
-    arguments: '--configuration $(buildConfiguration) --ouput $(Build.ArtifactStagingDirectory)/drop'
+    arguments: '--ouput $(Build.ArtifactStagingDirectory)/drop'
     zipAfterPublish: true
     modifyOutputPath: true
 
