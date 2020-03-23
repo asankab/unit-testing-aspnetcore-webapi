@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solutionDirectory: '**/netcore-unit-testing/web-api.sln'
+  solutionDirectory: 'netcore-unit-testing/web-api.sln'
   sourceCodeProjectPath: 'web-api/web-api.csproj'
   unitTestProjectPath: 'web-api-tests/web-api-tests.csproj'
   buildPlatform: 'Any CPU'
