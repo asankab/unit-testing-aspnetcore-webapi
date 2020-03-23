@@ -28,7 +28,7 @@ steps:
   displayName: 'DotNet Build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'DotNet Publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/drop'
+  displayName: 'DotNet Publish $(buildConfiguration) -> $(Build.ArtifactStagingDirectory)/drop'
   inputs:
     command: publish
     publishWebProjects: false
@@ -38,6 +38,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts'
-  #inputs:
-  #  pathToPublish: $(Build.ArtifactStagingDirectory)
-  #  artifactName: drop
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)/drop
+    artifactName: drop
