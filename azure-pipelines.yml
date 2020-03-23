@@ -33,7 +33,7 @@ steps:
     command: publish
     publishWebProjects: false
     projects: '$(sourceCodeProjectPath)'
-    arguments: '--ouput drop'
+    arguments: '--o drop'
     zipAfterPublish: true
     modifyOutputPath: true
 
