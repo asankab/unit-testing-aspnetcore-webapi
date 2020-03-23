@@ -34,8 +34,8 @@ steps:
   inputs:
     command: publish
     publishWebProjects: false
-    projects: ${{ sourceCodeProjectPath }}
-    arguments: '--configuration ${{ buildConfiguration }} --output $(build.artifactstagingdirectory)'
+    projects: $(sourceCodeProjectPath)
+    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)'
     zipAfterPublish: true
 
 #- task: PublishBuildArtifacts@1
