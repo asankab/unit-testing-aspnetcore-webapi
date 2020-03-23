@@ -26,13 +26,14 @@ steps:
 - script: dotnet build $(solutionDirectory) --configuration $(buildConfiguration)
   displayName: DotNet Build $(buildConfiguration)
 
-#- task: DotNetCoreCLI@2
-#  displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-#  inputs:
-#    command: publish
-#    publishWebProjects: false
-#    projects: $(sourceCodeProjectPath)
-#    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+- task: DotNetCoreCLI@2
+  displayName: 'DotNet Publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: $(sourceCodeProjectPath)
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/drop'
+    zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
