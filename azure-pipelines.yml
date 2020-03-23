@@ -33,12 +33,12 @@ steps:
     command: publish
     publishWebProjects: false
     projects: '$(sourceCodeProjectPath)'
-    arguments: '-o $(Build.ArtifactStagingDirectory)\drop'
+    arguments: '-o drop'
     zipAfterPublish: true
     modifyOutputPath: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts'
   inputs:
-    pathToPublish: $(Build.ArtifactStagingDirectory)\drop
+    pathToPublish: drop
     artifactName: drop
