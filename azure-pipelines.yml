@@ -15,7 +15,7 @@ variables:
   unitTestProjectPath: 'netcore-unit-testing/web-api-tests/web-api-tests.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  artifactName: ''
+  artifactName: 'drop'
 
 steps:
 - task: NuGetToolInstaller@1
